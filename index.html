@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mizynyua — украшения ручной работы: кольца, браслеты, чокеры</title>
+<meta name="description" content="Кольца с цирконами, плетёные браслеты, чокеры из бисера с буквой. Делаем под заказ, отправляем из Москвы. Заказ — в Telegram.">
+<!-- Демо-версия: закрыта от поиска. Перед запуском на боевом домене строку убрать. -->
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#FFF3DB">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:site_name" content="Mizynyua">
+<meta property="og:title" content="Mizynyua — handmade jewelry">
+<meta property="og:description" content="Кольца, браслеты и чокеры ручной работы. Под заказ, отправка из Москвы.">
+<meta property="og:url" content="https://m78-sites.github.io/mizynyua/">
+<meta property="og:image" content="https://m78-sites.github.io/mizynyua/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23FFF3DB'/%3E%3Cg fill='none' stroke='%23B4501C' stroke-linecap='round' transform='translate(-4 14)'%3E%3Cpath stroke-width='3.4' d='M22 27 44 15.5c6-3 14-3.5 15.5 0S52 20 44 18.5M50 27 28 15.5c-6-3-14-3.5-15.5 0S20 20 28 18.5'/%3E%3Cpath stroke-width='1.8' d='M23 6l23 9M49 6 26 15'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preload" href="fonts/forum-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/jost-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="img/ring-dopamine-pink.webp" as="image" type="image/webp">
+<link rel="stylesheet" href="css/style.css?v=16">
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+
+<svg width="0" height="0" class="sprite" aria-hidden="true" focusable="false">
+  <!-- бант Mizynyua: петли, концы крест-накрест и тонкие нити сверху — как клеймо на их фото -->
+  <symbol id="bow" viewBox="8 4 56 26">
+    <path class="bow__band" pathLength="1" d="M22 27 44 15.5c6-3 14-3.5 15.5 0S52 20 44 18.5"/>
+    <path class="bow__band" pathLength="1" d="M50 27 28 15.5c-6-3-14-3.5-15.5 0S20 20 28 18.5"/>
+    <path class="bow__thread" pathLength="1" d="M23 6l23 9"/>
+    <path class="bow__thread" pathLength="1" d="M49 6 26 15"/>
+  </symbol>
+  <symbol id="box" viewBox="0 0 24 24">
+    <path d="M4.5 10.5h15V20h-15zM3.5 7.5h17v3h-17zM12 7.5V20" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="close" viewBox="0 0 24 24">
+    <path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="plus" viewBox="0 0 24 24">
+    <path d="M12 6v12M6 12h12" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="check" viewBox="0 0 24 24">
+    <path d="m6 12.5 4 4 8-9" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+</svg>
+
+<a class="skip" href="#rings">Перейти к украшениям</a>
+
+<header class="header" data-header>
+  <div class="wrap header__row">
+    <nav class="nav" aria-label="Разделы">
+      <a href="#rings">Кольца и браслеты</a>
+      <a href="#beads">Бисер</a>
+      <a href="#order">Как заказать</a>
+      <a href="#faq">Вопросы</a>
+    </nav>
+    <a class="mark mark--small header__logo" href="#top" aria-label="Mizynyua — наверх">
+      <svg class="bow" aria-hidden="true"><use href="#bow"/></svg>
+      <span class="mark__word">MIZYNYUA</span>
+    </a>
+    <button class="boxbtn" type="button" data-cart-open aria-haspopup="dialog" aria-label="Коробочка, пусто">
+      <span class="boxbtn__icon" aria-hidden="true">
+        <svg><use href="#box"/></svg>
+        <svg class="bow boxbtn__bow"><use href="#bow"/></svg>
+      </span>
+      <span class="boxbtn__text">Коробочка</span>
+      <span class="boxbtn__count" data-cart-count hidden>0</span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero" aria-labelledby="hero-h">
+    <div class="wrap hero__grid">
+      <div class="hero__text">
+        <!-- фраза с их фирменной открытки, их же почерком -->
+        <p class="hero__script" lang="ru">Сияй, как никогда!</p>
+        <h1 class="hero__title" id="hero-h">Кольца, браслеты и&nbsp;чокеры ручной работы</h1>
+        <p class="hero__lead">Делаем под заказ и&nbsp;отправляем из&nbsp;Москвы. Заказ&nbsp;— одним сообщением в&nbsp;Telegram.</p>
+        <div class="hero__cta">
+          <a class="btn btn--ink" href="#rings">Выбрать украшение</a>
+          <a class="link hero__how" href="#order">Как заказать</a>
+        </div>
+      </div>
+      <!-- три вещи, разложенные на столе; каждая открывает свою карточку -->
+      <div class="still">
+        <button type="button" class="still__item still__item--a" data-open="ring-dopamine-pink" aria-label="Кольцо Dopamine, розовое">
+          <img src="img/ring-dopamine-pink.webp" alt="" width="532" height="798" fetchpriority="high" decoding="async">
+          <span class="hang hang--bottom" style="--tr:55.5px;--tt:34px;--ta:-31deg" aria-hidden="true"><span class="hang__hole"></span><svg class="hang__rope" width="1" height="1"><path class="tw1" d="M-3 16Q-11.4 38.6 -52 47"/><path class="tw2" d="M-3 16Q-11.4 38.6 -52 47"/><path class="tw1" d="M0 0Q-19.4 25.9 -52 47"/><path class="tw2" d="M0 0Q-19.4 25.9 -52 47"/><circle class="knot" cx="-52" cy="47" r="2.3"/></svg><span class="hang__tag"><span class="tag tag--r" data-price-of="ring-dopamine-pink">2&#8239;000&nbsp;₽</span></span></span>
+        </button>
+        <button type="button" class="still__item still__item--b" data-open="bracelet-blue" aria-label="Плетёный браслет, голубой">
+          <img src="img/bracelet-blue.webp" alt="" width="532" height="798" decoding="async">
+        </button>
+        <button type="button" class="still__item still__item--c" data-open="ring-turquoise" aria-label="Кольцо-дорожка с бирюзовыми цирконами">
+          <img src="img/ring-turquoise.webp" alt="" width="532" height="798" decoding="async">
+          <span class="hang hang--bottom" style="--tr:43.5px;--tt:22px;--ta:-18deg" aria-hidden="true"><span class="hang__hole"></span><svg class="hang__rope" width="1" height="1"><path class="tw1" d="M-3 16Q-7.8 30 -40 35"/><path class="tw2" d="M-3 16Q-7.8 30 -40 35"/><path class="tw1" d="M0 0Q-14 19.3 -40 35"/><path class="tw2" d="M0 0Q-14 19.3 -40 35"/><circle class="knot" cx="-40" cy="35" r="2.3"/></svg><span class="hang__tag"><span class="tag tag--r" data-price-of="ring-turquoise">2&#8239;900&nbsp;₽</span></span></span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="shelf" id="rings" aria-labelledby="rings-h">
+    <div class="wrap">
+      <header class="head">
+        <h2 id="rings-h">Кольца и&nbsp;браслеты</h2>
+        <p>Кольца из&nbsp;серебра 925 и&nbsp;цветные кольца Dopamine с&nbsp;цирконом. Плетёные браслеты на&nbsp;меди с&nbsp;золотым покрытием&nbsp;— под заказ за&nbsp;7–10&nbsp;дней.</p>
+      </header>
+      <div class="grid grid--tall" data-shelf="rings">
+        <p class="note grid__wait">Украшения загружаются. Не&nbsp;появились&nbsp;— обновите страницу или&nbsp;откройте <a href="https://t.me/mizynyua">канал Mizynyua</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="shelf" id="beads" aria-labelledby="beads-h">
+    <div class="wrap">
+      <header class="head">
+        <h2 id="beads-h">Бисер, собрано вручную</h2>
+        <p>Чокеры с&nbsp;буквой, браслеты из&nbsp;бисера и&nbsp;заколки с&nbsp;ракушками. Фото&nbsp;— на&nbsp;нашем подносе, как&nbsp;есть.</p>
+      </header>
+      <div class="grid" data-shelf="beads"></div>
+      <p class="shelf__more">Заколки, косметички и&nbsp;новинки сначала появляются в&nbsp;<a class="link" href="https://t.me/mizynyua" target="_blank" rel="noopener">канале @mizynyua</a></p>
+    </div>
+  </section>
+
+  <section class="section" id="order" aria-labelledby="order-h">
+    <div class="wrap">
+      <header class="head">
+        <h2 id="order-h">Как заказать</h2>
+      </header>
+      <ol class="beads">
+        <li><span class="beads__n">1</span><p><b>Положите в&nbsp;коробочку</b> всё, что понравилось. Количество меняется там&nbsp;же.</p></li>
+        <li><span class="beads__n">2</span><p><b>Нажмите «Оформить в&nbsp;Telegram».</b> Откроется чат с&nbsp;@masnmi, список уже будет в&nbsp;сообщении.</p></li>
+        <li><span class="beads__n">3</span><p><b>Обсудим размер, оплату и&nbsp;доставку</b> в&nbsp;переписке, сделаем и&nbsp;отправим из&nbsp;Москвы.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section parcel" id="parcel" aria-labelledby="parcel-h">
+    <div class="wrap parcel__grid">
+      <figure class="parcel__photo">
+        <img src="img/ring-turquoise-box.webp" width="532" height="798" loading="lazy" decoding="async" alt="Кольцо с бирюзовыми цирконами в бархатной коробочке">
+      </figure>
+      <div class="parcel__text">
+        <header class="head head--left">
+          <h2 id="parcel-h">Из&nbsp;посылки</h2>
+        </header>
+        <div class="parcel__stack">
+          <div class="postcard" aria-label="Открытка Mizynyua: «Сияй, как никогда!»" role="img">
+            <span class="postcard__side" aria-hidden="true">jewelry</span>
+            <span class="postcard__line" aria-hidden="true">Сияй, как никогда!</span>
+            <svg class="bow postcard__bow" aria-hidden="true"><use href="#bow"/></svg>
+          </div>
+          <blockquote class="letter">
+            <p>Всё получила, очень красивое, качественное, упаковка так вкусно пахнет. В&nbsp;общем, полностью довольна, ещё буду заказывать, иншаАллагь.</p>
+            <footer>Покупательница, <a class="link" href="https://t.me/mizynyua/9245" target="_blank" rel="noopener">отзыв в&nbsp;канале</a>, 10&nbsp;ноября</footer>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="faq" aria-labelledby="faq-h">
+    <div class="wrap wrap--narrow">
+      <header class="head">
+        <h2 id="faq-h">Вопросы</h2>
+      </header>
+      <div class="faq">
+        <details>
+          <summary>Как узнать размер кольца</summary>
+          <p>Оберните палец ниткой там, где будет кольцо, отметьте место, где концы сошлись, и&nbsp;измерьте длину линейкой. Пришлите цифру в&nbsp;переписке&nbsp;— подберём размер. Серебряные кольца есть во&nbsp;всех размерах, кольца Dopamine&nbsp;— единого размера, подойдут на&nbsp;17–18.</p>
+        </details>
+        <details>
+          <summary>Сколько ждать</summary>
+          <p>Плетёные браслеты делаем под заказ за&nbsp;7–10&nbsp;дней. По&nbsp;остальным украшениям срок скажем в&nbsp;переписке: что-то есть в&nbsp;наличии, что-то делаем под заказ.</p>
+        </details>
+        <details>
+          <summary>Оплата и&nbsp;доставка</summary>
+          <p>Отправляем из&nbsp;Москвы. Способ оплаты и&nbsp;доставки обсудим в&nbsp;переписке до&nbsp;того, как вы&nbsp;что-то оплатите.</p>
+        </details>
+        <details>
+          <summary>Из&nbsp;чего украшения</summary>
+          <p>Двойное кольцо и&nbsp;кольцо-дорожка&nbsp;— серебро 925 пробы с&nbsp;цирконами. Плетёные браслеты и&nbsp;обруч&nbsp;— медь с&nbsp;золотым покрытием и&nbsp;цирконы. Чокеры и&nbsp;браслеты из&nbsp;бисера собираем вручную. Состав каждой вещи&nbsp;— в&nbsp;её&nbsp;карточке.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__in">
+    <a class="mark" href="#top" aria-label="Mizynyua — наверх">
+      <svg class="bow" aria-hidden="true"><use href="#bow"/></svg>
+      <span class="mark__word">MIZYNYUA</span>
+      <span class="mark__tag">handmade jewelry</span>
+    </a>
+    <p class="footer__say">По&nbsp;поводу заказа писать <a class="link" href="https://t.me/masnmi" target="_blank" rel="noopener">@masnmi</a>
+      <svg class="heart" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"/></svg></p>
+    <ul class="footer__links">
+      <li><a class="link" href="https://t.me/mizynyua" target="_blank" rel="noopener">Канал @mizynyua</a></li>
+      <li><a class="link" href="#rings">Украшения</a></li>
+      <li><a class="link" href="#faq">Вопросы</a></li>
+    </ul>
+    <p class="footer__note">Демо-версия сайта. Цены и&nbsp;наличие взяты из&nbsp;канала, перед заказом уточняйте в&nbsp;переписке.</p>
+  </div>
+</footer>
+
+<button type="button" class="boxbar" data-boxbar data-cart-open hidden>
+  <span><span data-bar-count></span> · <span data-bar-total></span></span>
+  <span class="boxbar__go">Коробочка</span>
+</button>
+
+<dialog class="modal" data-product aria-labelledby="p-name">
+  <div class="modal__box">
+    <button type="button" class="iconbtn modal__close" data-close aria-label="Закрыть">
+      <svg aria-hidden="true"><use href="#close"/></svg>
+    </button>
+    <div class="modal__media">
+      <div class="modal__frame" data-p-frame></div>
+      <div class="modal__thumbs" data-p-thumbs></div>
+    </div>
+    <div class="modal__body">
+      <p class="modal__shelf" data-p-shelf></p>
+      <h2 class="modal__name" id="p-name" data-p-name>Украшение</h2>
+      <p class="modal__price"><span class="tag tag--lg" data-p-price></span></p>
+      <p class="modal__line" data-p-line></p>
+      <dl class="specs" data-p-specs></dl>
+      <p class="note" data-p-old hidden>Цена из&nbsp;старого поста&nbsp;— подтвердим в&nbsp;переписке.</p>
+      <div class="modal__cta">
+        <button type="button" class="btn btn--ink btn--block" data-p-add></button>
+        <a class="link modal__ask" data-p-ask href="https://t.me/masnmi" target="_blank" rel="noopener">Спросить про&nbsp;это украшение</a>
+      </div>
+    </div>
+    <div class="sr" aria-live="polite" data-live></div>
+  </div>
+</dialog>
+
+<dialog class="drawer" data-cart aria-labelledby="cart-h">
+  <div class="drawer__box">
+    <div class="drawer__head">
+      <h2 id="cart-h">Коробочка</h2>
+      <button type="button" class="iconbtn" data-close aria-label="Закрыть коробочку">
+        <svg aria-hidden="true"><use href="#close"/></svg>
+      </button>
+    </div>
+    <div class="drawer__list" data-cart-list></div>
+    <div class="drawer__foot" data-cart-foot hidden>
+      <div class="drawer__total"><span>Итого без доставки</span><span data-cart-total></span></div>
+      <p class="note" data-cart-oldnote hidden>Цены у&nbsp;отмеченных * позиций подтвердим в&nbsp;переписке.</p>
+      <a class="btn btn--ink btn--block" data-cart-send href="https://t.me/masnmi" target="_blank" rel="noopener">Оформить в&nbsp;Telegram</a>
+      <p class="note">Откроется чат с&nbsp;@masnmi, список уже будет в&nbsp;сообщении&nbsp;— останется нажать «Отправить».</p>
+      <button type="button" class="link drawer__copy" data-cart-copy>Не открылось? Скопировать список</button>
+    </div>
+    <div class="sr" aria-live="polite" data-live></div>
+  </div>
+</dialog>
+
+<div class="sr" aria-live="polite" data-live></div>
+
+<script src="js/catalog.js?v=4" defer></script>
+<script src="js/app.js?v=13" defer></script>
+</body>
+</html>
