@@ -476,6 +476,8 @@
 
   /* после перезагрузки с открытым окном в истории остаётся отметка — убираем, окна закрыты */
   try { if (history.state && history.state.mz) history.replaceState(null, ''); } catch (e) { /* без истории */ }
+  /* окна открываются через историю — браузер не должен сам прокручивать страницу при «назад» */
+  try { if ('scrollRestoration' in history) history.scrollRestoration = 'manual'; } catch (e) { /* старый браузер */ }
 
   /* цены на бирках первого экрана — из каталога, чтобы не разъехались */
   $$('[data-price-of]').forEach(function (t) {
