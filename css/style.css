@@ -345,7 +345,7 @@ html:not(.js) .card__open{cursor:default}
 .letter p{font-size:17px;line-height:1.65}
 .letter footer{font-size:var(--t-small);color:var(--muted)}
 @media (max-width:719px){
-  .letter{margin-left:var(--s4);padding:var(--s5)}
+  .letter{width:calc(100% - var(--s4));margin-left:var(--s4);padding:var(--s5);transform:rotate(1deg)}
 }
 @media (min-width:900px){
   .parcel__grid{grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gap)}
@@ -408,7 +408,7 @@ dialog::backdrop{background:var(--scrim)}
 .modal__box{position:relative;height:100%;background:var(--paper-hi);overflow-y:auto;overscroll-behavior:contain;display:flex;flex-direction:column}
 .modal__close{position:sticky;top:var(--s3);z-index:3;align-self:flex-end;flex:none;margin:var(--s3) var(--s3) -56px 0;background:var(--glass)}
 .modal__media{flex:none;background:var(--photo)}
-.modal__frame{aspect-ratio:var(--ratio,2 / 3);max-height:62vh;max-height:62dvh;overflow:hidden}
+.modal__frame{width:100%;height:min(135vw,52vh);height:min(135vw,52dvh);overflow:hidden}
 .modal__frame img{width:100%;height:100%;object-fit:cover}
 .modal__thumbs{display:flex;gap:var(--s2);padding:var(--s3) var(--s4);background:var(--paper-hi)}
 .modal__thumbs:empty{display:none}
@@ -434,7 +434,7 @@ dialog::backdrop{background:var(--scrim)}
   .modal__box{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:minmax(0,1fr);overflow:hidden;border-radius:var(--r-photo);box-shadow:var(--sh-2)}
   .modal__close{position:absolute;top:var(--s3);right:var(--s3);margin:0;background:transparent}
   .modal__media{display:flex;flex-direction:column;min-height:0;background:var(--paper-hi)}
-  .modal__frame{flex:1;min-height:0;max-height:none;aspect-ratio:auto;background:var(--photo)}
+  .modal__frame{flex:1;min-height:0;height:auto;max-height:none;aspect-ratio:auto;background:var(--photo)}
   .modal__thumbs{padding:var(--s3) var(--s5)}
   .modal__body{min-height:0;overflow-y:auto;overscroll-behavior:contain;padding:var(--s8) var(--s7) 0}
   .modal__cta{padding-bottom:var(--s6)}
