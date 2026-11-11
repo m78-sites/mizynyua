@@ -373,9 +373,10 @@ html:not(.js) .card__open{cursor:default}
 .boxbar{position:fixed;left:var(--s3);right:var(--s3);bottom:max(var(--s3),env(safe-area-inset-bottom));z-index:30;
   display:flex;align-items:center;justify-content:space-between;gap:var(--s4);min-height:56px;padding:0 var(--s5);
   background:var(--ink);color:var(--on-ink);border-radius:var(--r);box-shadow:var(--sh-2);font-size:15px;font-variant-numeric:tabular-nums;
-  transform:translateY(calc(100% + var(--s7)));transition:transform var(--d-slow) var(--e-out)}
+  transform:translateY(calc(100% + var(--s7)));visibility:hidden;
+  transition:transform var(--d-slow) var(--e-out),visibility 0s linear var(--d-slow)}
 .boxbar[hidden]{display:flex}
-.boxbar.is-on{transform:none}
+.boxbar.is-on{transform:none;visibility:visible;transition:transform var(--d-slow) var(--e-out),visibility 0s}
 .boxbar__go{font-weight:500;text-decoration:underline;text-underline-offset:5px}
 @media (min-width:960px){ .boxbar,.boxbar[hidden]{display:none} body.has-bar{padding-bottom:0} }
 
