@@ -108,15 +108,15 @@
         '<circle class="knot" cx="' + tx + '" cy="' + ty + '" r="2.3"/></svg>' };
   }
   /* каталог: вертикальная бирка с острым верхом висит под люверсом; петля — через люверс и через верхний край фото */
-  var VHANGS = [[-4, 30, -5], [3, 36, 4], [-6, 26, -7], [2, 40, 3], [-3, 33, -3], [5, 28, 6], [-1, 38, -4]];
+  var VHANGS = [[-1, 18, -3], [1, 22, 2], [-2, 16, -4], [1, 20, 3], [-1, 21, -2], [2, 17, 4], [0, 19, -3]];
   function vhang(text, i) {
     var p = VHANGS[i % VHANGS.length], tx = p[0], ty = p[1];
     var f = function (n) { return Math.round(n * 10) / 10; };
     var a = 'M0 0Q' + f(tx * 0.5 + 2) + ' ' + f(ty * 0.5) + ' ' + tx + ' ' + ty;
-    var b = 'M3 -14Q' + f(tx * 0.6 + 6) + ' ' + f(ty * 0.4) + ' ' + tx + ' ' + ty;
+    var b = 'M3 -10Q' + f(tx * 0.6 + 5) + ' ' + f(ty * 0.35) + ' ' + tx + ' ' + ty;
     return '<span class="hang hang--v" style="--tx:' + tx + 'px;--ty:' + ty + 'px;--ta:' + p[2] + 'deg" aria-hidden="true"><span class="hang__hole"></span>' +
       '<svg class="hang__rope" width="1" height="1"><path class="tw1" d="' + b + '"/><path class="tw2" d="' + b + '"/>' +
-      '<path class="tw1" d="' + a + '"/><path class="tw2" d="' + a + '"/><circle class="knot" cx="' + tx + '" cy="' + ty + '" r="2.3"/></svg>' +
+      '<path class="tw1" d="' + a + '"/><path class="tw2" d="' + a + '"/><circle class="knot" cx="' + tx + '" cy="' + ty + '" r="1.8"/></svg>' +
       '<span class="vtag"><span class="vtag__body">' + esc(text) + '</span></span></span>';
   }
   function hang(text, where, i) {
@@ -417,6 +417,63 @@
   function onScroll() { header.classList.toggle('is-stuck', window.scrollY > 4); }
   window.addEventListener('scroll', onScroll, { passive: true });
 
+  /* ---------- бирки качаются от прокрутки ----------
+     Каждая бирка — маятник на пружинке: пока страницу листают, бирку относит от движения,
+     после остановки она качается обратно и затухает. Короткая нить — качается чаще,
+     длинная — медленнее; у каждой своя сила отклонения и своё затухание. */
+  function initSway() {
+    if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var visible = new Set();
+    var items = $$('.vtag, .hang__tag').map(function (el, i) {
+      var hang = el.closest('.hang');
+      var cs = getComputedStyle(hang);
+      var len = parseFloat(cs.getPropertyValue('--ty')) || (parseFloat(cs.getPropertyValue('--tt')) + 13) || 30;
+      var jit = ((i * 37) % 11) / 10;
+      var k = 0.000055 * (20 / Math.max(14, len)) * (0.85 + jit * 0.3);
+      return { el: el, hang: hang, a: 0, w: 0, k: k,
+        c: 2 * (0.09 + jit * 0.07) * Math.sqrt(k),
+        drag: (1.6 + jit * 1.6) * (i % 3 === 1 ? -0.7 : 1) };
+    });
+    if (!items.length) return;
+    function rest(it) { it.a = 0; it.w = 0; it.el.style.setProperty('--sw', '0deg'); }
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (en) {
+        en.forEach(function (e) {
+          var it = items.find(function (x) { return x.hang === e.target; });
+          if (!it) return;
+          if (e.isIntersecting) visible.add(it); else { visible.delete(it); rest(it); }
+        });
+      }, { rootMargin: '80px 0px' });
+      items.forEach(function (it) { io.observe(it.hang); });
+    } else items.forEach(function (it) { visible.add(it); });
+
+    var lastY = window.scrollY, lastT = 0, v = 0, running = false;
+    function frame(t) {
+      var dt = lastT ? Math.min(48, t - lastT) : 16;
+      lastT = t;
+      var y = window.scrollY;
+      var nv = (y - lastY) / dt;
+      lastY = y;
+      v += (nv - v) * 0.3;
+      var energy = Math.abs(v);
+      visible.forEach(function (it) {
+        var target = Math.max(-7, Math.min(7, -v * it.drag));
+        var acc = -it.k * (it.a - target) - it.c * it.w;
+        it.w += acc * dt;
+        it.a = Math.max(-14, Math.min(14, it.a + it.w * dt));
+        it.el.style.setProperty('--sw', it.a.toFixed(2) + 'deg');
+        energy += Math.abs(it.a) + Math.abs(it.w) * 60;
+      });
+      if (energy > 0.04) requestAnimationFrame(frame);
+      else { running = false; lastT = 0; v = 0; visible.forEach(rest); }
+    }
+    window.addEventListener('scroll', function () {
+      if (running) return;
+      running = true;
+      requestAnimationFrame(frame);
+    }, { passive: true });
+  }
+
   /* после перезагрузки с открытым окном в истории остаётся отметка — убираем, окна закрыты */
   try { if (history.state && history.state.mz) history.replaceState(null, ''); } catch (e) { /* без истории */ }
 
@@ -430,4 +487,5 @@
   renderShelves();
   sync();
   onScroll();
+  initSway();
 })();
