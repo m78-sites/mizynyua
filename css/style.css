@@ -225,14 +225,19 @@ html:not(.js) .card__open{cursor:default}
 }
 
 /* каталог: вертикальная бирка с острым верхом под люверсом; люверс отступает от края, чтобы бирка не резалась */
-.hang.hang--v{top:16px;right:60px}
-.vtag{position:absolute;left:var(--tx);top:calc(var(--ty) - 9px);z-index:2;transform:translateX(-50%) rotate(var(--ta));transform-origin:50% 9px;
-  filter:drop-shadow(0 6px 8px rgba(43,31,25,.24))}
-.vtag__body{position:relative;display:block;padding:18px var(--s3) 9px;background:var(--tag-paper);color:var(--ink);
-  clip-path:polygon(0 12px,50% 0,100% 12px,100% 100%,0 100%);border-radius:0 0 4px 4px;
-  font:500 13px/1 var(--f-text);font-variant-numeric:tabular-nums;white-space:nowrap;text-align:center}
-.vtag__body::before{content:"";position:absolute;left:calc(50% - 3.5px);top:5.5px;width:7px;height:7px;border-radius:50%;
-  background:radial-gradient(circle,var(--hole) 0 1.5px,var(--brass-d) 1.8px,var(--brass-hi) 2.6px,var(--brass) 3.3px,transparent 3.6px)}
+.hang.hang--v{top:10px;right:30px}
+.hang--v .hang__hole{left:-4.5px;top:-4.5px;width:9px;height:9px;
+  background:radial-gradient(circle,var(--hole) 0 1.6px,var(--brass-d) 1.9px,var(--brass-hi) 2.7px,var(--brass) 3.6px,var(--brass-d) 4.1px,transparent 4.5px)}
+.hang--v .hang__rope .tw1{stroke-width:1.5}
+.hang--v .hang__rope .tw2{stroke-width:1;stroke-dasharray:1.4 1.9}
+.vtag{position:absolute;left:var(--tx);top:calc(var(--ty) - 6px);z-index:2;transform:translateX(-50%) rotate(calc(var(--ta) + var(--sw,0deg)));transform-origin:50% 6px;
+  filter:drop-shadow(0 3px 5px rgba(43,31,25,.2))}
+.vtag__body{position:relative;display:block;padding:13px 8px 6px;background:var(--tag-paper);color:var(--ink);
+  clip-path:polygon(0 9px,50% 0,100% 9px,100% 100%,0 100%);border-radius:0 0 3px 3px;
+  font:500 12px/1 var(--f-text);letter-spacing:.01em;font-variant-numeric:tabular-nums;white-space:nowrap;text-align:center}
+.vtag__body::before{content:"";position:absolute;left:calc(50% - 2.5px);top:3.5px;width:5px;height:5px;border-radius:50%;
+  background:radial-gradient(circle,var(--hole) 0 1px,var(--brass-d) 1.3px,var(--brass-hi) 1.9px,var(--brass) 2.4px,transparent 2.6px)}
+@media (min-width:720px){ .hang.hang--v{right:34px} .vtag__body{font-size:13px;padding:14px 9px 7px} }
 @keyframes vswing{
   0%{transform:translateX(-50%) rotate(var(--ta))}
   22%{transform:translateX(-50%) rotate(calc(var(--ta) + 9deg))}
@@ -257,7 +262,7 @@ html:not(.js) .card__open{cursor:default}
 .hang__rope .tw1{stroke:var(--twine);stroke-width:1.9}
 .hang__rope .tw2{stroke:var(--twine-hi);stroke-width:1.3;stroke-dasharray:1.7 2.3}
 .hang__rope .knot{fill:var(--twine)}
-.hang__tag{position:absolute;right:var(--tr);top:var(--tt);z-index:2;transform:rotate(var(--ta));transform-origin:calc(100% + 3.5px) 50%;
+.hang__tag{position:absolute;right:var(--tr);top:var(--tt);z-index:2;transform:rotate(calc(var(--ta) + var(--sw,0deg)));transform-origin:calc(100% + 3.5px) 50%;
   filter:drop-shadow(0 6px 8px rgba(43,31,25,.26))}
 .hang .tag{margin:0;padding:0 var(--s3) 0 10px;background:var(--tag-paper);color:var(--ink);font-weight:500;
   transform-origin:calc(100% + 3.5px) 50%;transition:none}
